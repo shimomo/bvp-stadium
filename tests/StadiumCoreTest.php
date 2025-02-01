@@ -20,7 +20,7 @@ class StadiumCoreTest extends PHPUnitTestCase
     /**
      * @return void
      */
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->stadium ??= new StadiumCore();
     }
