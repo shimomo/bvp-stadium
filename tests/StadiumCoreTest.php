@@ -15,7 +15,7 @@ class StadiumCoreTest extends PHPUnitTestCase
     /**
      * @var \Boatrace\Venture\Project\StadiumCore
      */
-    private StadiumCore $stadium;
+    protected StadiumCore $stadium;
 
     /**
      * @return void
