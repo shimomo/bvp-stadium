@@ -6,7 +6,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/bvp/stadium/v/unstable)](https://packagist.org/packages/bvp/stadium)
 [![License](https://poser.pugx.org/bvp/stadium/license)](https://packagist.org/packages/bvp/stadium)
 
-Stadium is designed to retrieve information about Boatrace's stadiums using identifiers such as id, name, short name, hiragana name, katakana name, english name, or url.
+The BVP Stadium package is designed to retrieve information about Boatrace stadiums using identifiers, including ID, name (short, Hiragana, Katakana, English), and URL.
 
 ## Installation
 ```bash
@@ -59,4 +59,4 @@ var_dump($collection->get('url'));           // string(32) "https://www.boatrace
 ```
 
 ## License
-The Stadium is open source software licensed under the [MIT license](LICENSE).
+The BVP Stadium package is open source software licensed under the [MIT license](LICENSE).
