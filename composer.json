@@ -1,7 +1,7 @@
 {
     "name": "bvp/stadium",
     "description": "The BVP Stadium package.",
-    "keywords": ["stadium", "library"],
+    "keywords": ["library", "boatrace", "stadium"],
     "license": "MIT",
     "type": "library",
     "authors": [
