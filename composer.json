@@ -1,6 +1,6 @@
 {
     "name": "bvp/stadium",
-    "description": "Retrieve information about Boatrace's stadiums",
+    "description": "The BVP Stadium package.",
     "keywords": ["stadium", "library"],
     "license": "MIT",
     "type": "library",
