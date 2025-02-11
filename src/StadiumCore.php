@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace BVP\Stadium;
 
+use BadMethodCallException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
@@ -33,6 +34,8 @@ class StadiumCore implements StadiumCoreInterface
      * @param  string  $name
      * @param  array   $arguments
      * @return \Illuminate\Support\Collection|null
+     *
+     * @throws \BadMethodCallException
      */
     public function __call(string $name, array $arguments): ?Collection
     {
@@ -40,7 +43,9 @@ class StadiumCore implements StadiumCoreInterface
             return $this->by($matches[1], $arguments);
         }
 
-        return null;
+        throw new BadMethodCallException(
+            __METHOD__ . "() - The specified method '{$name}' does not exist in class '" . self::class . "'."
+        );
     }
 
     /**
