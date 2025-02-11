@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project;
+namespace BVP\Stadium;
 
 use Illuminate\Support\Collection;
 
@@ -12,12 +12,12 @@ use Illuminate\Support\Collection;
 class Stadium implements StadiumInterface
 {
     /**
-     * @var \Boatrace\Venture\Project\StadiumInterface|null
+     * @var \BVP\Stadium\StadiumInterface|null
      */
     private static ?StadiumInterface $instance;
 
     /**
-     * @param  \Boatrace\Venture\Project\StadiumCoreInterface  $stadium
+     * @param  \BVP\Stadium\StadiumCoreInterface  $stadium
      * @return void
      */
     public function __construct(private readonly StadiumCoreInterface $stadium) {}
@@ -43,8 +43,8 @@ class Stadium implements StadiumInterface
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\StadiumCoreInterface|null  $stadiumCore
-     * @return \Boatrace\Venture\Project\StadiumInterface
+     * @param  \BVP\Stadium\StadiumCoreInterface|null  $stadiumCore
+     * @return \BVP\Stadium\StadiumInterface
      */
     public static function getInstance(?StadiumCoreInterface $stadiumCore = null): StadiumInterface
     {
@@ -52,8 +52,8 @@ class Stadium implements StadiumInterface
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\StadiumCoreInterface|null  $stadiumCore
-     * @return \Boatrace\Venture\Project\StadiumInterface
+     * @param  \BVP\Stadium\StadiumCoreInterface|null  $stadiumCore
+     * @return \BVP\Stadium\StadiumInterface
      */
     public static function createInstance(?StadiumCoreInterface $stadiumCore = null): StadiumInterface
     {

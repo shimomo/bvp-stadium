@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests;
+namespace BVP\Stadium\Tests;
 
-use Boatrace\Venture\Project\StadiumCore;
+use BVP\Stadium\StadiumCore;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 /**
@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 class StadiumCoreTest extends PHPUnitTestCase
 {
     /**
-     * @var \Boatrace\Venture\Project\StadiumCore
+     * @var \BVP\Stadium\StadiumCore
      */
     protected StadiumCore $stadium;
 

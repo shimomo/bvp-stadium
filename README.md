@@ -19,7 +19,7 @@ composer require bvp/stadium
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Boatrace\Venture\Project\Stadium;
+use BVP\Stadium\Stadium;
 
 $collection = Stadium::byId(12);
 var_dump($collection->get('id'));            // int(12)

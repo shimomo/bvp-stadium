@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project;
+namespace BVP\Stadium;
 
 use Illuminate\Support\Collection;
 
@@ -26,14 +26,14 @@ interface StadiumInterface
     public static function __callStatic(string $name, array $arguments): ?Collection;
 
     /**
-     * @param  \Boatrace\Venture\Project\StadiumCoreInterface|null  $stadiumCore
-     * @return \Boatrace\Venture\Project\StadiumInterface
+     * @param  \BVP\Stadium\StadiumCoreInterface|null  $stadiumCore
+     * @return \BVP\Stadium\StadiumInterface
      */
     public static function getInstance(?StadiumCoreInterface $stadiumCore = null): StadiumInterface;
 
     /**
-     * @param  \Boatrace\Venture\Project\StadiumCoreInterface|null  $stadiumCore
-     * @return \Boatrace\Venture\Project\StadiumInterface
+     * @param  \BVP\Stadium\StadiumCoreInterface|null  $stadiumCore
+     * @return \BVP\Stadium\StadiumInterface
      */
     public static function createInstance(?StadiumCoreInterface $stadiumCore = null): StadiumInterface;
 

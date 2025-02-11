@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests;
+namespace BVP\Stadium\Tests;
 
-use Boatrace\Venture\Project\Stadium;
+use BVP\Stadium\Stadium;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 /**
