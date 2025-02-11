@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace BVP\Stadium\Tests;
 
 use BVP\Stadium\Stadium;
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author shimomo
  */
-class StadiumTest extends PHPUnitTestCase
+class StadiumTest extends TestCase
 {
     /**
      * @return void
