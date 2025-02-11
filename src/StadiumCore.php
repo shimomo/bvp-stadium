@@ -39,7 +39,7 @@ class StadiumCore implements StadiumCoreInterface
      */
     public function __call(string $name, array $arguments): ?Collection
     {
-        if (! empty($arguments) && preg_match('/^by(.+)$/u', $name, $matches)) {
+        if (!empty($arguments) && preg_match('/^by(.+)$/u', $name, $matches)) {
             return $this->by($matches[1], $arguments);
         }
 
