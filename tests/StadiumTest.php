@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @author shimomo
  */
-class StadiumTest extends TestCase
+final class StadiumTest extends TestCase
 {
     /**
      * @return void
