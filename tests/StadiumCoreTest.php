@@ -129,4 +129,18 @@ final class StadiumCoreTest extends TestCase
         $this->assertSame('suminoe', $collection->get('english_name'));
         $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
     }
+
+    /**
+     * @return void
+     */
+    public function testException(): void
+    {
+        $this->expectException(\BadMethodCallException::class);
+        $this->expectExceptionMessage(
+            "BVP\Stadium\StadiumCore::__call() - " .
+            "The specified method 'invalid' does not exist in class 'BVP\Stadium\StadiumCore'"
+        );
+
+        $this->stadium->invalid();
+    }
 }
