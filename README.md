@@ -21,41 +21,41 @@ require __DIR__ . '/vendor/autoload.php';
 
 use BVP\Stadium\Stadium;
 
-$collection = Stadium::byId(12);
-var_dump($collection->get('id'));            // int(12)
-var_dump($collection->get('name'));          // string(27) "ボートレース住之江"
-var_dump($collection->get('short_name'));    // string(9) "住之江"
-var_dump($collection->get('hiragana_name')); // string(30) "ぼーとれーすすみのえ"
-var_dump($collection->get('katakana_name')); // string(30) "ボートレーススミノエ"
-var_dump($collection->get('english_name'));  // string(7) "suminoe"
-var_dump($collection->get('url'));           // string(32) "https://www.boatrace-suminoe.jp/"
+$response = Stadium::byNumber(12);
+var_dump($response['number']);        // int(12)
+var_dump($response['name']);          // string(27) "ボートレース住之江"
+var_dump($response['short_name']);    // string(9) "住之江"
+var_dump($response['hiragana_name']); // string(30) "ぼーとれーすすみのえ"
+var_dump($response['katakana_name']); // string(30) "ボートレーススミノエ"
+var_dump($response['english_name']);  // string(7) "suminoe"
+var_dump($response['url']);           // string(32) "https://www.boatrace-suminoe.jp/"
 
-$collection = Stadium::byName('ボートレース住之江');
-var_dump($collection->get('id'));            // int(12)
-var_dump($collection->get('name'));          // string(27) "ボートレース住之江"
-var_dump($collection->get('short_name'));    // string(9) "住之江"
-var_dump($collection->get('hiragana_name')); // string(30) "ぼーとれーすすみのえ"
-var_dump($collection->get('katakana_name')); // string(30) "ボートレーススミノエ"
-var_dump($collection->get('english_name'));  // string(7) "suminoe"
-var_dump($collection->get('url'));           // string(32) "https://www.boatrace-suminoe.jp/"
+$response = Stadium::byName('ボートレース住之江');
+var_dump($response['number']);        // int(12)
+var_dump($response['name']);          // string(27) "ボートレース住之江"
+var_dump($response['short_name']);    // string(9) "住之江"
+var_dump($response['hiragana_name']); // string(30) "ぼーとれーすすみのえ"
+var_dump($response['katakana_name']); // string(30) "ボートレーススミノエ"
+var_dump($response['english_name']);  // string(7) "suminoe"
+var_dump($response['url']);           // string(32) "https://www.boatrace-suminoe.jp/"
 
-$collection = Stadium::byShortName('住之江');
-var_dump($collection->get('id'));            // int(12)
-var_dump($collection->get('name'));          // string(27) "ボートレース住之江"
-var_dump($collection->get('short_name'));    // string(9) "住之江"
-var_dump($collection->get('hiragana_name')); // string(30) "ぼーとれーすすみのえ"
-var_dump($collection->get('katakana_name')); // string(30) "ボートレーススミノエ"
-var_dump($collection->get('english_name'));  // string(7) "suminoe"
-var_dump($collection->get('url'));           // string(32) "https://www.boatrace-suminoe.jp/"
+$response = Stadium::byShortName('住之江');
+var_dump($response['number']);        // int(12)
+var_dump($response['name']);          // string(27) "ボートレース住之江"
+var_dump($response['short_name']);    // string(9) "住之江"
+var_dump($response['hiragana_name']); // string(30) "ぼーとれーすすみのえ"
+var_dump($response['katakana_name']); // string(30) "ボートレーススミノエ"
+var_dump($response['english_name']);  // string(7) "suminoe"
+var_dump($response['url']);           // string(32) "https://www.boatrace-suminoe.jp/"
 
-$collection = Stadium::byUrl('suminoe');
-var_dump($collection->get('id'));            // int(12)
-var_dump($collection->get('name'));          // string(27) "ボートレース住之江"
-var_dump($collection->get('short_name'));    // string(9) "住之江"
-var_dump($collection->get('hiragana_name')); // string(30) "ぼーとれーすすみのえ"
-var_dump($collection->get('katakana_name')); // string(30) "ボートレーススミノエ"
-var_dump($collection->get('english_name'));  // string(7) "suminoe"
-var_dump($collection->get('url'));           // string(32) "https://www.boatrace-suminoe.jp/"
+$response = Stadium::byUrl('suminoe');
+var_dump($response['number']);        // int(12)
+var_dump($response['name']);          // string(27) "ボートレース住之江"
+var_dump($response['short_name']);    // string(9) "住之江"
+var_dump($response['hiragana_name']); // string(30) "ぼーとれーすすみのえ"
+var_dump($response['katakana_name']); // string(30) "ボートレーススミノエ"
+var_dump($response['english_name']);  // string(7) "suminoe"
+var_dump($response['url']);           // string(32) "https://www.boatrace-suminoe.jp/"
 ```
 
 ## License
