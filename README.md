@@ -6,7 +6,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/bvp/stadium/v/unstable)](https://packagist.org/packages/bvp/stadium)
 [![License](https://poser.pugx.org/bvp/stadium/license)](https://packagist.org/packages/bvp/stadium)
 
-The BVP Stadium package is designed to retrieve information about Boatrace stadiums using identifiers, including ID, name (short, Hiragana, Katakana, English), and URL.
+The BVP Stadium package is designed to retrieve information about Boatrace stadiums using identifiers, including Number, Name (Short, Hiragana, Katakana, English), and URL.
 
 ## Installation
 ```bash
