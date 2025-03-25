@@ -4,27 +4,11 @@ declare(strict_types=1);
 
 namespace BVP\Stadium;
 
-use Illuminate\Support\Collection;
-
 /**
  * @author shimomo
  */
 interface StadiumInterface
 {
-    /**
-     * @param  string  $name
-     * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
-     */
-    public function __call(string $name, array $arguments): ?Collection;
-
-    /**
-     * @param  string  $name
-     * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
-     */
-    public static function __callStatic(string $name, array $arguments): ?Collection;
-
     /**
      * @param  \BVP\Stadium\StadiumCoreInterface|null  $stadiumCore
      * @return \BVP\Stadium\StadiumInterface
