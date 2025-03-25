@@ -17,14 +17,14 @@ final class StadiumTest extends TestCase
      */
     public function testById(): void
     {
-        $collection = Stadium::byId(12);
-        $this->assertSame(12, $collection->get('id'));
-        $this->assertSame('ボートレース住之江', $collection->get('name'));
-        $this->assertSame('住之江', $collection->get('short_name'));
-        $this->assertSame('ぼーとれーすすみのえ', $collection->get('hiragana_name'));
-        $this->assertSame('ボートレーススミノエ', $collection->get('katakana_name'));
-        $this->assertSame('suminoe', $collection->get('english_name'));
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
+        $response = Stadium::byId(12);
+        $this->assertSame(12, $response['id']);
+        $this->assertSame('ボートレース住之江', $response['name']);
+        $this->assertSame('住之江', $response['short_name']);
+        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
+        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
+        $this->assertSame('suminoe', $response['english_name']);
+        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
     }
 
     /**
@@ -32,14 +32,14 @@ final class StadiumTest extends TestCase
      */
     public function testByName(): void
     {
-        $collection = Stadium::byName('ボートレース住之江');
-        $this->assertSame(12, $collection->get('id'));
-        $this->assertSame('ボートレース住之江', $collection->get('name'));
-        $this->assertSame('住之江', $collection->get('short_name'));
-        $this->assertSame('ぼーとれーすすみのえ', $collection->get('hiragana_name'));
-        $this->assertSame('ボートレーススミノエ', $collection->get('katakana_name'));
-        $this->assertSame('suminoe', $collection->get('english_name'));
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
+        $response = Stadium::byName('ボートレース住之江');
+        $this->assertSame(12, $response['id']);
+        $this->assertSame('ボートレース住之江', $response['name']);
+        $this->assertSame('住之江', $response['short_name']);
+        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
+        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
+        $this->assertSame('suminoe', $response['english_name']);
+        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
     }
 
     /**
@@ -47,14 +47,14 @@ final class StadiumTest extends TestCase
      */
     public function testByShortName(): void
     {
-        $collection = Stadium::byShortName('住之江');
-        $this->assertSame(12, $collection->get('id'));
-        $this->assertSame('ボートレース住之江', $collection->get('name'));
-        $this->assertSame('住之江', $collection->get('short_name'));
-        $this->assertSame('ぼーとれーすすみのえ', $collection->get('hiragana_name'));
-        $this->assertSame('ボートレーススミノエ', $collection->get('katakana_name'));
-        $this->assertSame('suminoe', $collection->get('english_name'));
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
+        $response = Stadium::byShortName('住之江');
+        $this->assertSame(12, $response['id']);
+        $this->assertSame('ボートレース住之江', $response['name']);
+        $this->assertSame('住之江', $response['short_name']);
+        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
+        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
+        $this->assertSame('suminoe', $response['english_name']);
+        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
     }
 
     /**
@@ -62,14 +62,14 @@ final class StadiumTest extends TestCase
      */
     public function testByHiraganaName(): void
     {
-        $collection = Stadium::byHiraganaName('すみのえ');
-        $this->assertSame(12, $collection->get('id'));
-        $this->assertSame('ボートレース住之江', $collection->get('name'));
-        $this->assertSame('住之江', $collection->get('short_name'));
-        $this->assertSame('ぼーとれーすすみのえ', $collection->get('hiragana_name'));
-        $this->assertSame('ボートレーススミノエ', $collection->get('katakana_name'));
-        $this->assertSame('suminoe', $collection->get('english_name'));
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
+        $response = Stadium::byHiraganaName('すみのえ');
+        $this->assertSame(12, $response['id']);
+        $this->assertSame('ボートレース住之江', $response['name']);
+        $this->assertSame('住之江', $response['short_name']);
+        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
+        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
+        $this->assertSame('suminoe', $response['english_name']);
+        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
     }
 
     /**
@@ -77,14 +77,14 @@ final class StadiumTest extends TestCase
      */
     public function testByKatakanaName(): void
     {
-        $collection = Stadium::byKatakanaName('スミノエ');
-        $this->assertSame(12, $collection->get('id'));
-        $this->assertSame('ボートレース住之江', $collection->get('name'));
-        $this->assertSame('住之江', $collection->get('short_name'));
-        $this->assertSame('ぼーとれーすすみのえ', $collection->get('hiragana_name'));
-        $this->assertSame('ボートレーススミノエ', $collection->get('katakana_name'));
-        $this->assertSame('suminoe', $collection->get('english_name'));
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
+        $response = Stadium::byKatakanaName('スミノエ');
+        $this->assertSame(12, $response['id']);
+        $this->assertSame('ボートレース住之江', $response['name']);
+        $this->assertSame('住之江', $response['short_name']);
+        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
+        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
+        $this->assertSame('suminoe', $response['english_name']);
+        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
     }
 
     /**
@@ -92,14 +92,14 @@ final class StadiumTest extends TestCase
      */
     public function testByEnglishName(): void
     {
-        $collection = Stadium::byEnglishName('suminoe');
-        $this->assertSame(12, $collection->get('id'));
-        $this->assertSame('ボートレース住之江', $collection->get('name'));
-        $this->assertSame('住之江', $collection->get('short_name'));
-        $this->assertSame('ぼーとれーすすみのえ', $collection->get('hiragana_name'));
-        $this->assertSame('ボートレーススミノエ', $collection->get('katakana_name'));
-        $this->assertSame('suminoe', $collection->get('english_name'));
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
+        $response = Stadium::byEnglishName('suminoe');
+        $this->assertSame(12, $response['id']);
+        $this->assertSame('ボートレース住之江', $response['name']);
+        $this->assertSame('住之江', $response['short_name']);
+        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
+        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
+        $this->assertSame('suminoe', $response['english_name']);
+        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
     }
 
     /**
@@ -107,14 +107,14 @@ final class StadiumTest extends TestCase
      */
     public function testByUrl(): void
     {
-        $collection = Stadium::byUrl('suminoe');
-        $this->assertSame(12, $collection->get('id'));
-        $this->assertSame('ボートレース住之江', $collection->get('name'));
-        $this->assertSame('住之江', $collection->get('short_name'));
-        $this->assertSame('ぼーとれーすすみのえ', $collection->get('hiragana_name'));
-        $this->assertSame('ボートレーススミノエ', $collection->get('katakana_name'));
-        $this->assertSame('suminoe', $collection->get('english_name'));
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $collection->get('url'));
+        $response = Stadium::byUrl('suminoe');
+        $this->assertSame(12, $response['id']);
+        $this->assertSame('ボートレース住之江', $response['name']);
+        $this->assertSame('住之江', $response['short_name']);
+        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
+        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
+        $this->assertSame('suminoe', $response['english_name']);
+        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
     }
 
     /**

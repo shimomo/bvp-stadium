@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace BVP\Stadium;
 
 use BadMethodCallException;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 /**
@@ -14,30 +13,18 @@ use Illuminate\Support\Str;
 class StadiumCore implements StadiumCoreInterface
 {
     /**
-     * @var \Illuminate\Support\Collection
+     * @var array
      */
-    private Collection $stadiums;
-
-    /**
-     * @return void
-     */
-    public function __construct()
-    {
-        Collection::macro('recursive', fn() => $this->map(
-            fn($value) => is_array($value) || is_object($value)
-                ? collect($value)->recursive()
-                : $value
-        ));
-    }
+    private array $stadiums;
 
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      *
      * @throws \BadMethodCallException
      */
-    public function __call(string $name, array $arguments): ?Collection
+    public function __call(string $name, array $arguments): ?array
     {
         if (!empty($arguments) && preg_match('/^by(.+)$/u', $name, $matches)) {
             return $this->by($matches[1], $arguments);
@@ -49,29 +36,30 @@ class StadiumCore implements StadiumCoreInterface
     }
 
     /**
-     * @return \Illuminate\Support\Collection
+     * @return array
      */
-    private function loadConfig(): Collection
+    private function loadConfig(): array
     {
-        return $this->stadiums ??= collect(
-            require __DIR__ . '/../config/stadiums.php'
-        )->recursive();
+        return $this->stadiums ??= require __DIR__ . '/../config/stadiums.php';
     }
 
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      */
-    private function by(string $name, array $arguments): ?Collection
+    private function by(string $name, array $arguments): ?array
     {
-        $stadiums = $this->loadConfig()->keyBy(Str::snake($name));
-        if ($stadiums->has($arguments[0])) {
-            return $stadiums->get($arguments[0]);
+        $stadiums = array_combine(array_column($this->loadConfig(), Str::snake($name)), $this->loadConfig());
+
+        if (isset($stadiums[$arguments[0]])) {
+            return $stadiums[$arguments[0]];
         }
 
-        return $stadiums->filter(
-            fn($value, $key) => Str::contains($key, $arguments[0])
-        )->first();
+        $filteredStadiums = array_filter($stadiums, function ($value, $key) use ($arguments) {
+            return Str::contains($key, $arguments[0]);
+        }, ARRAY_FILTER_USE_BOTH);
+
+        return reset($filteredStadiums);
     }
 }

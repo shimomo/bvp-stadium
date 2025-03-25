@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace BVP\Stadium;
 
-use Illuminate\Support\Collection;
-
 /**
  * @author shimomo
  */
@@ -25,9 +23,9 @@ class Stadium implements StadiumInterface
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      */
-    public function __call(string $name, array $arguments): ?Collection
+    public function __call(string $name, array $arguments): ?array
     {
         return $this->stadium->$name(...$arguments);
     }
@@ -35,9 +33,9 @@ class Stadium implements StadiumInterface
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      */
-    public static function __callStatic(string $name, array $arguments): ?Collection
+    public static function __callStatic(string $name, array $arguments): ?array
     {
         return self::getInstance()->$name(...$arguments);
     }
