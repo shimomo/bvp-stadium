@@ -28,10 +28,10 @@ final class StadiumCoreTest extends TestCase
     /**
      * @return void
      */
-    public function testById(): void
+    public function testByNumber(): void
     {
-        $response = $this->stadium->byId(12);
-        $this->assertSame(12, $response['id']);
+        $response = $this->stadium->byNumber(12);
+        $this->assertSame(12, $response['number']);
         $this->assertSame('ボートレース住之江', $response['name']);
         $this->assertSame('住之江', $response['short_name']);
         $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
@@ -46,7 +46,7 @@ final class StadiumCoreTest extends TestCase
     public function testByName(): void
     {
         $response = $this->stadium->byName('ボートレース住之江');
-        $this->assertSame(12, $response['id']);
+        $this->assertSame(12, $response['number']);
         $this->assertSame('ボートレース住之江', $response['name']);
         $this->assertSame('住之江', $response['short_name']);
         $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
@@ -61,7 +61,7 @@ final class StadiumCoreTest extends TestCase
     public function testByShortName(): void
     {
         $response = $this->stadium->byShortName('住之江');
-        $this->assertSame(12, $response['id']);
+        $this->assertSame(12, $response['number']);
         $this->assertSame('ボートレース住之江', $response['name']);
         $this->assertSame('住之江', $response['short_name']);
         $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
@@ -76,7 +76,7 @@ final class StadiumCoreTest extends TestCase
     public function testByHiraganaName(): void
     {
         $response = $this->stadium->byHiraganaName('すみのえ');
-        $this->assertSame(12, $response['id']);
+        $this->assertSame(12, $response['number']);
         $this->assertSame('ボートレース住之江', $response['name']);
         $this->assertSame('住之江', $response['short_name']);
         $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
@@ -91,7 +91,7 @@ final class StadiumCoreTest extends TestCase
     public function testByKatakanaName(): void
     {
         $response = $this->stadium->byKatakanaName('スミノエ');
-        $this->assertSame(12, $response['id']);
+        $this->assertSame(12, $response['number']);
         $this->assertSame('ボートレース住之江', $response['name']);
         $this->assertSame('住之江', $response['short_name']);
         $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
@@ -106,7 +106,7 @@ final class StadiumCoreTest extends TestCase
     public function testByEnglishName(): void
     {
         $response = $this->stadium->byEnglishName('suminoe');
-        $this->assertSame(12, $response['id']);
+        $this->assertSame(12, $response['number']);
         $this->assertSame('ボートレース住之江', $response['name']);
         $this->assertSame('住之江', $response['short_name']);
         $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
@@ -121,7 +121,7 @@ final class StadiumCoreTest extends TestCase
     public function testByUrl(): void
     {
         $response = $this->stadium->byUrl('suminoe');
-        $this->assertSame(12, $response['id']);
+        $this->assertSame(12, $response['number']);
         $this->assertSame('ボートレース住之江', $response['name']);
         $this->assertSame('住之江', $response['short_name']);
         $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);

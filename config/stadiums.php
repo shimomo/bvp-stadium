@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     [
-        'id' => 1,
+        'number' => 1,
         'name' => 'ボートレース桐生',
         'short_name' => '桐生',
         'hiragana_name' => 'ぼーとれーすきりゅう',
@@ -13,7 +13,7 @@ return [
         'url' => 'http://www.kiryu-kyotei.com/',
     ],
     [
-        'id' => 2,
+        'number' => 2,
         'name' => 'ボートレース戸田',
         'short_name' => '戸田',
         'hiragana_name' => 'ぼーとれーすとだ',
@@ -22,7 +22,7 @@ return [
         'url' => 'https://www.boatrace-toda.jp/',
     ],
     [
-        'id' => 3,
+        'number' => 3,
         'name' => 'ボートレース江戸川',
         'short_name' => '江戸川',
         'hiragana_name' => 'ぼーとれーすえどがわ',
@@ -31,7 +31,7 @@ return [
         'url' => 'https://boatrace-edogawa.com/',
     ],
     [
-        'id' => 4,
+        'number' => 4,
         'name' => 'ボートレース平和島',
         'short_name' => '平和島',
         'hiragana_name' => 'ぼーとれーすへいわじま',
@@ -40,7 +40,7 @@ return [
         'url' => 'https://www.heiwajima.gr.jp/',
     ],
     [
-        'id' => 5,
+        'number' => 5,
         'name' => 'ボートレース多摩川',
         'short_name' => '多摩川',
         'hiragana_name' => 'ぼーとれーすたまがわ',
@@ -49,7 +49,7 @@ return [
         'url' => 'https://boatrace-tamagawa.com/',
     ],
     [
-        'id' => 6,
+        'number' => 6,
         'name' => 'ボートレース浜名湖',
         'short_name' => '浜名湖',
         'hiragana_name' => 'ぼーとれーすはまなこ',
@@ -58,7 +58,7 @@ return [
         'url' => 'https://www.boatrace-hamanako.jp/',
     ],
     [
-        'id' => 7,
+        'number' => 7,
         'name' => 'ボートレース蒲郡',
         'short_name' => '蒲郡',
         'hiragana_name' => 'ぼーとれーすがまごおり',
@@ -67,7 +67,7 @@ return [
         'url' => 'https://www.gamagori-kyotei.com/',
     ],
     [
-        'id' => 8,
+        'number' => 8,
         'name' => 'ボートレース常滑',
         'short_name' => '常滑',
         'hiragana_name' => 'ぼーとれーすとこなめ',
@@ -76,7 +76,7 @@ return [
         'url' => 'https://www.boatrace-tokoname.jp/',
     ],
     [
-        'id' => 9,
+        'number' => 9,
         'name' => 'ボートレース津',
         'short_name' => '津',
         'hiragana_name' => 'ぼーとれーすつ',
@@ -85,7 +85,7 @@ return [
         'url' => 'https://www.boatrace-tsu.com/',
     ],
     [
-        'id' => 10,
+        'number' => 10,
         'name' => 'ボートレース三国',
         'short_name' => '三国',
         'hiragana_name' => 'ぼーとれーすみくに',
@@ -94,7 +94,7 @@ return [
         'url' => 'https://www.boatrace-mikuni.jp/',
     ],
     [
-        'id' => 11,
+        'number' => 11,
         'name' => 'ボートレースびわこ',
         'short_name' => 'びわこ',
         'hiragana_name' => 'ぼーとれーすびわこ',
@@ -103,7 +103,7 @@ return [
         'url' => 'https://www.boatrace-biwako.jp/',
     ],
     [
-        'id' => 12,
+        'number' => 12,
         'name' => 'ボートレース住之江',
         'short_name' => '住之江',
         'hiragana_name' => 'ぼーとれーすすみのえ',
@@ -112,7 +112,7 @@ return [
         'url' => 'https://www.boatrace-suminoe.jp/',
     ],
     [
-        'id' => 13,
+        'number' => 13,
         'name' => 'ボートレース尼崎',
         'short_name' => '尼崎',
         'hiragana_name' => 'ぼーとれーすあまがさき',
@@ -121,7 +121,7 @@ return [
         'url' => 'https://boatrace-amagasaki.jp/',
     ],
     [
-        'id' => 14,
+        'number' => 14,
         'name' => 'ボートレース鳴門',
         'short_name' => '鳴門',
         'hiragana_name' => 'ぼーとれーすなると',
@@ -130,7 +130,7 @@ return [
         'url' => 'https://www.n14.jp/',
     ],
     [
-        'id' => 15,
+        'number' => 15,
         'name' => 'ボートレース丸亀',
         'short_name' => '丸亀',
         'hiragana_name' => 'ぼーとれーすまるがめ',
@@ -139,7 +139,7 @@ return [
         'url' => 'https://www.marugameboat.jp/',
     ],
     [
-        'id' => 16,
+        'number' => 16,
         'name' => 'ボートレース児島',
         'short_name' => '児島',
         'hiragana_name' => 'ぼーとれーすこじま',
@@ -148,7 +148,7 @@ return [
         'url' => 'https://www.kojimaboat.jp/',
     ],
     [
-        'id' => 17,
+        'number' => 17,
         'name' => 'ボートレース宮島',
         'short_name' => '宮島',
         'hiragana_name' => 'ぼーとれーすみやじま',
@@ -157,7 +157,7 @@ return [
         'url' => 'https://www.boatrace-miyajima.com/',
     ],
     [
-        'id' => 18,
+        'number' => 18,
         'name' => 'ボートレース徳山',
         'short_name' => '徳山',
         'hiragana_name' => 'ぼーとれーすとくやま',
@@ -166,7 +166,7 @@ return [
         'url' => 'https://www.boatrace-tokuyama.jp/',
     ],
     [
-        'id' => 19,
+        'number' => 19,
         'name' => 'ボートレース下関',
         'short_name' => '下関',
         'hiragana_name' => 'ぼーとれーすしものせき',
@@ -175,7 +175,7 @@ return [
         'url' => 'https://www.boatrace-shimonoseki.jp/',
     ],
     [
-        'id' => 20,
+        'number' => 20,
         'name' => 'ボートレース若松',
         'short_name' => '若松',
         'hiragana_name' => 'ぼーとれーすわかまつ',
@@ -184,7 +184,7 @@ return [
         'url' => 'https://www.wmb.jp/',
     ],
     [
-        'id' => 21,
+        'number' => 21,
         'name' => 'ボートレース芦屋',
         'short_name' => '芦屋',
         'hiragana_name' => 'ぼーとれーすあしや',
@@ -193,7 +193,7 @@ return [
         'url' => 'https://www.boatrace-ashiya.com/',
     ],
     [
-        'id' => 22,
+        'number' => 22,
         'name' => 'ボートレース福岡',
         'short_name' => '福岡',
         'hiragana_name' => 'ぼーとれーすふくおか',
@@ -202,7 +202,7 @@ return [
         'url' => 'https://www.boatrace-fukuoka.com/',
     ],
     [
-        'id' => 23,
+        'number' => 23,
         'name' => 'ボートレース唐津',
         'short_name' => '唐津',
         'hiragana_name' => 'ぼーとれーすからつ',
@@ -211,7 +211,7 @@ return [
         'url' => 'https://www.boatrace-karatsu.jp/',
     ],
     [
-        'id' => 24,
+        'number' => 24,
         'name' => 'ボートレース大村',
         'short_name' => '大村',
         'hiragana_name' => 'ぼーとれーすおおむら',
