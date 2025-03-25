@@ -22,7 +22,7 @@ final class StadiumCoreTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->stadium ??= new StadiumCore();
+        $this->stadium = new StadiumCore();
     }
 
     /**
