@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace BVP\Stadium;
 
-use Illuminate\Support\Str;
-
 /**
  * @author shimomo
  */
@@ -49,14 +47,15 @@ class StadiumCore implements StadiumCoreInterface
      */
     private function by(string $name, array $arguments): ?array
     {
-        $stadiums = array_combine(array_column($this->stadiums, Str::snake($name)), $this->stadiums);
+        $snakeCaseName = ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $name)), '_');
+        $stadiums = array_combine(array_column($this->stadiums, $snakeCaseName), $this->stadiums);
 
         if (isset($stadiums[$arguments[0]])) {
             return $stadiums[$arguments[0]];
         }
 
         $filteredStadiums = array_filter($stadiums, function ($value, $key) use ($arguments) {
-            return Str::contains($key, $arguments[0]);
+            return str_contains($key, $arguments[0]);
         }, ARRAY_FILTER_USE_BOTH);
 
         return reset($filteredStadiums);
