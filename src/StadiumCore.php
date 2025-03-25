@@ -18,6 +18,14 @@ class StadiumCore implements StadiumCoreInterface
     private array $stadiums;
 
     /**
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->stadiums ??= require __DIR__ . '/../config/stadiums.php';
+    }
+
+    /**
      * @param  string  $name
      * @param  array   $arguments
      * @return array|null
@@ -36,21 +44,13 @@ class StadiumCore implements StadiumCoreInterface
     }
 
     /**
-     * @return array
-     */
-    private function loadConfig(): array
-    {
-        return $this->stadiums ??= require __DIR__ . '/../config/stadiums.php';
-    }
-
-    /**
      * @param  string  $name
      * @param  array   $arguments
      * @return array|null
      */
     private function by(string $name, array $arguments): ?array
     {
-        $stadiums = array_combine(array_column($this->loadConfig(), Str::snake($name)), $this->loadConfig());
+        $stadiums = array_combine(array_column($this->stadiums, Str::snake($name)), $this->stadiums);
 
         if (isset($stadiums[$arguments[0]])) {
             return $stadiums[$arguments[0]];
