@@ -1,7 +1,7 @@
-# Stadium
+# BVP Stadium
 
-[![Build Status](https://github.com/BoatraceVentureProject/Stadium/workflows/Tests/badge.svg)](https://github.com/BoatraceVentureProject/Stadium/actions?query=workflow%3Atests)
-[![codecov](https://codecov.io/gh/BoatraceVentureProject/Stadium/graph/badge.svg?token=5wbIaaGrYu)](https://codecov.io/gh/BoatraceVentureProject/Stadium)
+[![Build Status](https://github.com/shimomo/bvp-stadium/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-stadium/actions?query=workflow%3Atests)
+[![codecov](https://codecov.io/gh/shimomo/bvp-stadium/graph/badge.svg?token=URL318B6CX)](https://codecov.io/gh/shimomo/bvp-stadium)
 [![Latest Stable Version](https://poser.pugx.org/bvp/stadium/v/stable)](https://packagist.org/packages/bvp/stadium)
 [![Latest Unstable Version](https://poser.pugx.org/bvp/stadium/v/unstable)](https://packagist.org/packages/bvp/stadium)
 [![License](https://poser.pugx.org/bvp/stadium/license)](https://packagist.org/packages/bvp/stadium)
