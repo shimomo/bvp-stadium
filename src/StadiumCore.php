@@ -15,6 +15,13 @@ class StadiumCore implements StadiumCoreInterface
     private array $stadiums;
 
     /**
+     * @var array
+     */
+    private array $resolveMethodMap = [
+        '/^by(.+)$/u' => 'by',
+    ];
+
+    /**
      * @return void
      */
     public function __construct()
@@ -26,13 +33,27 @@ class StadiumCore implements StadiumCoreInterface
      * @param  string  $name
      * @param  array   $arguments
      * @return array|null
-     *
-     * @throws \BadMethodCallException
      */
     public function __call(string $name, array $arguments): ?array
     {
-        if (!empty($arguments) && preg_match('/^by(.+)$/u', $name, $matches)) {
-            return $this->by($matches[1], $arguments);
+        return $this->resolveMethod($name, $arguments);
+    }
+
+    /**
+     * @param  string  $name
+     * @param  array   $arguments
+     * @return array|null
+     *
+     * @throws \BadMethodCallException
+     */
+    private function resolveMethod(string $name, array $arguments): ?array
+    {
+        foreach ($this->resolveMethodMap as $pattern => $method) {
+            if (preg_match($pattern, $name, $matches)) {
+                if (is_callable([$this, $method])) {
+                    return $this->$method($matches[1], $arguments);
+                }
+            }
         }
 
         throw new \BadMethodCallException(
