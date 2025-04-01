@@ -26,7 +26,7 @@ class StadiumCore implements StadiumCoreInterface
      */
     public function __construct()
     {
-        $this->stadiums ??= require __DIR__ . '/../config/stadiums.php';
+        $this->stadiums = require __DIR__ . '/../config/stadiums.php';
     }
 
     /**
