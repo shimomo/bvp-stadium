@@ -135,6 +135,36 @@ final class StadiumTest extends TestCase
     /**
      * @return void
      */
+    public function testExceptionOnTooFewArguments(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            "BVP\Stadium\StadiumCore::by() - " .
+            "Too few arguments to function BVP\Stadium\StadiumCore::byNumber(), " .
+            "0 passed and exactly 1 expected."
+        );
+
+        Stadium::byNumber();
+    }
+
+    /**
+     * @return void
+     */
+    public function testExceptionOnTooManyArguments(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            "BVP\Stadium\StadiumCore::by() - " .
+            "Too many arguments to function BVP\Stadium\StadiumCore::byNumber(), " .
+            "2 passed and exactly 1 expected."
+        );
+
+        Stadium::byNumber(12, 34);
+    }
+
+    /**
+     * @return void
+     */
     public function testGetInstance(): void
     {
         Stadium::resetInstance();

@@ -65,9 +65,19 @@ class StadiumCore implements StadiumCoreInterface
      * @param  string  $name
      * @param  array   $arguments
      * @return array|null
+     *
+     * @throws \InvalidArgumentException
      */
     private function by(string $name, array $arguments): ?array
     {
+        if (($countArguments = count($arguments)) !== 1) {
+            $messageType = $countArguments === 0 ? 'few' : 'many';
+            throw new \InvalidArgumentException(
+                __METHOD__ . "() - Too {$messageType} arguments to function " . self::class . "::by{$name}(), " .
+                "$countArguments passed and exactly 1 expected."
+            );
+        }
+
         $snakeCaseName = ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $name)), '_');
         $stadiums = array_combine(array_column($this->stadiums, $snakeCaseName), $this->stadiums);
 
