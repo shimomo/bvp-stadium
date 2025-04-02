@@ -121,7 +121,7 @@ final class StadiumTest extends TestCase
     /**
      * @return void
      */
-    public function testException(): void
+    public function testExceptionOnDoesNotExistMethodCall(): void
     {
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
