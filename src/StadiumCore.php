@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace BVP\Stadium;
 
+use Shimomo\Helper\Arr;
+
 /**
  * @author shimomo
  */
@@ -79,17 +81,31 @@ class StadiumCore implements StadiumCoreInterface
         }
 
         $snakeCaseName = $this->snakeCase($name);
-        $stadiums = array_combine(array_column($this->stadiums, $snakeCaseName), $this->stadiums);
-
-        if (isset($stadiums[$arguments[0]])) {
-            return $stadiums[$arguments[0]];
+        $flattenArguments = $this->arrayFlatten($arguments);
+        $exactMatchedStadium = Arr::firstWhere($this->stadiums, $snakeCaseName, $flattenArguments[0]);
+        if (!is_null($exactMatchedStadium)) {
+            return $exactMatchedStadium;
         }
 
-        $filteredStadiums = array_filter($stadiums, function ($value, $key) use ($arguments) {
-            return str_contains($key, $arguments[0]);
+        $partialMatchedStadiums = array_filter($this->stadiums, function ($stadium, $key) use ($snakeCaseName, $flattenArguments) {
+            return str_contains((string) $stadium[$snakeCaseName], (string) $flattenArguments[0]);
         }, ARRAY_FILTER_USE_BOTH);
 
-        return reset($filteredStadiums);
+        return reset($partialMatchedStadiums);
+    }
+
+    /**
+     * @param  array  $array
+     * @return array
+     */
+    private function arrayFlatten(array $array): array
+    {
+        $response = [];
+        array_walk_recursive($array, function ($value) use (&$response) {
+            $response[] = $value;
+        });
+
+        return $response;
     }
 
     /**
