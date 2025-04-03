@@ -78,7 +78,7 @@ class StadiumCore implements StadiumCoreInterface
             );
         }
 
-        $snakeCaseName = ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $name)), '_');
+        $snakeCaseName = $this->snakeCase($name);
         $stadiums = array_combine(array_column($this->stadiums, $snakeCaseName), $this->stadiums);
 
         if (isset($stadiums[$arguments[0]])) {
@@ -90,5 +90,14 @@ class StadiumCore implements StadiumCoreInterface
         }, ARRAY_FILTER_USE_BOTH);
 
         return reset($filteredStadiums);
+    }
+
+    /**
+     * @param  string  $value
+     * @return string
+     */
+    private function snakeCase(string $value): string
+    {
+        return ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $value)), '_');
     }
 }
