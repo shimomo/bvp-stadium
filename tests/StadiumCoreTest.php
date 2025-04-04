@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BVP\Stadium\Tests;
 
 use BVP\Stadium\StadiumCore;
+use PHPUnit\Framework\Attributes\DataProviderExternal;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -26,108 +27,80 @@ final class StadiumCoreTest extends TestCase
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
      * @return void
      */
-    public function testByNumber(): void
+    #[DataProviderExternal(StadiumCoreDataProvider::class, 'byNumberProvider')]
+    public function testByNumber(array $arguments, array $expected): void
     {
-        $response = $this->stadium->byNumber(12);
-        $this->assertSame(12, $response['number']);
-        $this->assertSame('ボートレース住之江', $response['name']);
-        $this->assertSame('住之江', $response['short_name']);
-        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
-        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
-        $this->assertSame('suminoe', $response['english_name']);
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
+        $this->assertSame($expected, $this->stadium->byNumber(...$arguments));
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
      * @return void
      */
-    public function testByName(): void
+    #[DataProviderExternal(StadiumCoreDataProvider::class, 'byNameProvider')]
+    public function testByName(array $arguments, array $expected): void
     {
-        $response = $this->stadium->byName('ボートレース住之江');
-        $this->assertSame(12, $response['number']);
-        $this->assertSame('ボートレース住之江', $response['name']);
-        $this->assertSame('住之江', $response['short_name']);
-        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
-        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
-        $this->assertSame('suminoe', $response['english_name']);
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
+        $this->assertSame($expected, $this->stadium->byName(...$arguments));
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
      * @return void
      */
-    public function testByShortName(): void
+    #[DataProviderExternal(StadiumCoreDataProvider::class, 'byShortNameProvider')]
+    public function testByShortName(array $arguments, array $expected): void
     {
-        $response = $this->stadium->byShortName('住之江');
-        $this->assertSame(12, $response['number']);
-        $this->assertSame('ボートレース住之江', $response['name']);
-        $this->assertSame('住之江', $response['short_name']);
-        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
-        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
-        $this->assertSame('suminoe', $response['english_name']);
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
+        $this->assertSame($expected, $this->stadium->byShortName(...$arguments));
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
      * @return void
      */
-    public function testByHiraganaName(): void
+    #[DataProviderExternal(StadiumCoreDataProvider::class, 'byHiraganaNameProvider')]
+    public function testByHiraganaName(array $arguments, array $expected): void
     {
-        $response = $this->stadium->byHiraganaName('すみのえ');
-        $this->assertSame(12, $response['number']);
-        $this->assertSame('ボートレース住之江', $response['name']);
-        $this->assertSame('住之江', $response['short_name']);
-        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
-        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
-        $this->assertSame('suminoe', $response['english_name']);
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
+        $this->assertSame($expected, $this->stadium->byHiraganaName(...$arguments));
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
      * @return void
      */
-    public function testByKatakanaName(): void
+    #[DataProviderExternal(StadiumCoreDataProvider::class, 'byKatakanaNameProvider')]
+    public function testByKatakanaName(array $arguments, array $expected): void
     {
-        $response = $this->stadium->byKatakanaName('スミノエ');
-        $this->assertSame(12, $response['number']);
-        $this->assertSame('ボートレース住之江', $response['name']);
-        $this->assertSame('住之江', $response['short_name']);
-        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
-        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
-        $this->assertSame('suminoe', $response['english_name']);
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
+        $this->assertSame($expected, $this->stadium->byKatakanaName(...$arguments));
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
      * @return void
      */
-    public function testByEnglishName(): void
+    #[DataProviderExternal(StadiumCoreDataProvider::class, 'byEnglishNameProvider')]
+    public function testByEnglishName(array $arguments, array $expected): void
     {
-        $response = $this->stadium->byEnglishName('suminoe');
-        $this->assertSame(12, $response['number']);
-        $this->assertSame('ボートレース住之江', $response['name']);
-        $this->assertSame('住之江', $response['short_name']);
-        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
-        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
-        $this->assertSame('suminoe', $response['english_name']);
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
+        $this->assertSame($expected, $this->stadium->byEnglishName(...$arguments));
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
      * @return void
      */
-    public function testByUrl(): void
+    #[DataProviderExternal(StadiumCoreDataProvider::class, 'byUrlProvider')]
+    public function testByUrl(array $arguments, array $expected): void
     {
-        $response = $this->stadium->byUrl('suminoe');
-        $this->assertSame(12, $response['number']);
-        $this->assertSame('ボートレース住之江', $response['name']);
-        $this->assertSame('住之江', $response['short_name']);
-        $this->assertSame('ぼーとれーすすみのえ', $response['hiragana_name']);
-        $this->assertSame('ボートレーススミノエ', $response['katakana_name']);
-        $this->assertSame('suminoe', $response['english_name']);
-        $this->assertSame('https://www.boatrace-suminoe.jp/', $response['url']);
+        $this->assertSame($expected, $this->stadium->byUrl(...$arguments));
     }
 
     /**
