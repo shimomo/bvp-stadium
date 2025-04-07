@@ -91,7 +91,8 @@ class StadiumCore implements StadiumCoreInterface
             return str_contains((string) $stadium[$snakeCaseName], (string) $flattenArguments[0]);
         }, ARRAY_FILTER_USE_BOTH);
 
-        return reset($partialMatchedStadiums);
+        $partialMatchedStadium = reset($partialMatchedStadiums);
+        return $partialMatchedStadium === false ? null : $partialMatchedStadium;
     }
 
     /**
