@@ -76,7 +76,7 @@ class StadiumCore implements StadiumCoreInterface
             $messageType = $countArguments === 0 ? 'few' : 'many';
             throw new \InvalidArgumentException(
                 __METHOD__ . "() - Too {$messageType} arguments to function " . self::class . "::by{$name}(), " .
-                "$countArguments passed and exactly 1 expected."
+                "{$countArguments} passed and exactly 1 expected."
             );
         }
 
