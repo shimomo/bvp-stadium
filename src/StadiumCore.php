@@ -80,7 +80,7 @@ class StadiumCore implements StadiumCoreInterface
             );
         }
 
-        $snakeCaseName = $this->snakeCase($name);
+        $snakeCaseName = $this->convertToSnakeCase($name);
         $flattenArguments = $this->arrayFlatten($arguments);
         $exactMatchedStadium = Arr::firstWhere($this->stadiums, $snakeCaseName, $flattenArguments[0]);
         if (!is_null($exactMatchedStadium)) {
@@ -113,7 +113,7 @@ class StadiumCore implements StadiumCoreInterface
      * @param  string  $value
      * @return string
      */
-    private function snakeCase(string $value): string
+    private function convertToSnakeCase(string $value): string
     {
         return ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $value)), '_');
     }
