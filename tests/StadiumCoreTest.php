@@ -111,10 +111,10 @@ final class StadiumCoreTest extends TestCase
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\Stadium\StadiumCore::resolveMethod() - " .
-            "Call to undefined method 'BVP\Stadium\StadiumCore::invalid()'."
+            "Call to undefined method 'BVP\Stadium\StadiumCore::ghost()'."
         );
 
-        $this->stadium->invalid();
+        $this->stadium->ghost();
     }
 
     /**
