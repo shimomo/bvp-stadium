@@ -1,15 +1,26 @@
 {
+    "$schema": "https://getcomposer.org/schema.json",
     "name": "bvp/stadium",
     "description": "The BVP Stadium package for Boatrace.",
-    "keywords": ["library", "boatrace", "stadium"],
+    "keywords": [
+        "boatrace",
+        "japan",
+        "japanese",
+        "library",
+        "stadium"
+    ],
     "license": "MIT",
     "type": "library",
     "authors": [
         {
             "name": "shimomo",
-            "email": "developer@shimomo.net"
+            "email": "bvp@shimomo.net"
         }
     ],
+    "support": {
+        "issues": "https://github.com/shimomo/bvp-stadium/issues",
+        "source": "https://github.com/shimomo/bvp-stadium"
+    },
     "require": {
         "php": "^8.2",
         "shimomo/helper": "^1.0"
