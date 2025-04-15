@@ -111,7 +111,7 @@ final class StadiumCoreTest extends TestCase
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\Stadium\StadiumCore::resolveMethod() - " .
-            "The specified method 'invalid' does not exist in class 'BVP\Stadium\StadiumCore'"
+            "Call to undefined method 'BVP\Stadium\StadiumCore::invalid()'."
         );
 
         $this->stadium->invalid();
